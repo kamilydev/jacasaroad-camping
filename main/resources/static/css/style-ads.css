@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #1E1E1E;
+    color: white;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #00cc99;
+}
+
+.profile-icon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid orange;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+.ad-header {
+    text-align: center;
+}
+
+.ad-header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.ad-image {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ad-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ad-heart {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: red;
+}
+
+.ad-header p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.ad-details {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.details-grid p {
+    margin: 10px;
+}
+
+.details-grid {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.details-grid div {
+    width: 48%;
+}
+
+.infos-ads p {
+    margin: 10px;
+}
+
+.infos-ads {
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #ffffff;
+}
+
+.reserve-button {
+    display: block;
+    background-color: #FFA629;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px auto 0;
+}
+
+.reserve-button:hover {
+    background-color: #FF8F00;
+}
+
+.ad-reviews {
+    margin-top: 20px;
+}
+
+.ad-reviews h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.review img {
+    margin-right: 10px;
+}
+
+footer {
+    background-color: #1E1E1E;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    width: 100%;
+}
+
+.anunciante-foto {
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: 50px;
+    border-radius: 50%; /* Faz a imagem ficar redonda */
+    object-fit: cover; /* Faz a imagem preencher o círculo sem distorção */
+}
+
+.comentario-foto {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1001; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+}
+.modal-content h2{
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+}
+
+.reserve-button-modal {
+    display: block;
+    background-color: #FFA629;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px auto 0;
+}
+
+.reserve-button-modal:hover {
+    background-color: #FF8F00;
+}
+
+#checkin, #checkout {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 16px;
+    margin: 5px 0;
+    width: 80%;
+    text-align: center;
+}
