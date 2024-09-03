@@ -1,10 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anúncios - JaCasa Road</title>
+    <link rel="stylesheet" href="../css/style-my-ads.css">
 </head>
-<body>
 
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/jacasa-road-logo.jpg" alt="JaCasa Road Logo">
+            <h1>JaCasa Road</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../templates/homeLogin.html">Home</a></li>
+                <li><a href="explorerVisualizarTodosAnuncios.html">Explorar</a></li>
+                <li><a href="../templates/feedConstrucao.html">Feed</a></li>
+                <li><a href="../templates/adsMeusAnunciosAnfitriao.html" class="active">Anúncios</a></li>
+                <li><a href="../templates/configDadosPessoais.html">Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="profile-icon">
+            <img src="../images/default-image-perfil.jpg" alt="Perfil">
+        </div>
+    </header>
+
+    <main>
+        <h2>Anúncios</h2>
+        <div class="button-group">
+            <a href="../templates/adsCriarAnuncio.html" class="btn-anunciar">Anunciar</a>
+            <a href="../templates/adsMeusAnunciosAnfitriao.html" class="btn-meus-anuncios active">Meus Anúncios</a>
+            <a href="../templates/adsRelatorios.html" class="btn-relatorios">Relatórios</a>
+            <a href="../templates/adsEspacosReservados.html" class="btn-relatorios">Espaços reservados</a>
+        </div>
+        
+        <section class="explorer-header">
+            <button class="filter-button">Filtrar</button>
+            <input type="text" placeholder="Buscar" class="search-bar">
+        </section>
+        
+        <section class="ads-grid">
+            <div class="ad-item" id="ad-1">
+                <div class="ad-image">
+                    <span class="ad-heart" onclick="deleteAd('ad-1')">✖️</span>
+                    <span class="ad-edit">
+                        <a class="edit-anuncio" href="../templates/adsAtualizarAnuncio.html">
+                            ✏️
+                        </a>
+                    </span>
+                    <a href="explorerVisualizarAnuncio.html" class="ad-item-link">
+                        <img src="../images/ads-one.jpg" alt="ads-one">
+                    </a>
+                </div>
+                <div class="ad-details">
+                    <h3>Silver Retreat</h3>
+                    <p>Valor da diária: R$ 250,00</p>
+                    <p>Classificação: 4.5 ⭐</p>
+                    <p>Endereço: Avenida das Árvores, 123 - Serra Verde, RS</p>
+                    <p>Próxima data disponível: 15/09/2024</p>
+                    <p>Anunciante: GreenEscape</p>
+                </div>
+            </div>
+
+           
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Camping System. Todos os direitos reservados | Kamily Santos.</p>
+    </footer>
+
+    <script>
+        // Função para deletar o anúncio
+        function deleteAd(adId) {
+            const adElement = document.getElementById(adId);
+            adElement.style.display = 'none';
+        }
+
+        // Script para manter o botão ativo verde
+        document.querySelectorAll('.button-group a').forEach(link => {
+            link.addEventListener('click', function () {
+                document.querySelectorAll('.button-group a').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
+
 </html>

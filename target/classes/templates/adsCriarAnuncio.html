@@ -1,10 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anúncios - JaCasa Road</title>
+    <link rel="stylesheet" href="../css/style-my-ads.css">
 </head>
+
 <body>
+    <header>
+        <div class="logo">
+            <img src="../images/jacasa-road-logo.jpg" alt="JaCasa Road Logo">
+            <h1>JaCasa Road</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../templates/homeLogin.html">Home</a></li>
+                <li><a href="explorerVisualizarTodosAnuncios.html">Explorar</a></li>
+                <li><a href="../templates/feedConstrucao.html">Feed</a></li>
+                <li><a href="../templates/adsMeusAnunciosAnfitriao.html" class="active">Anúncios</a></li>
+                <li><a href="../templates/configDadosPessoais.html">Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="profile-icon">
+            <img src="../images/default-image-perfil.jpg" alt="Perfil">
+        </div>
+    </header>
+
+    <main>
+        <h2>Anúncios</h2>
+        <div class="button-group">
+            <a href="../templates/adsCriarAnuncio.html" class="btn-anunciar active">Anunciar</a>
+            <a href="../templates/adsMeusAnunciosAnfitriao.html" class="btn-meus-anuncios">Meus Anúncios</a>
+            <a href="../templates/adsRelatorios.html" class="btn-relatorios">Relatórios</a>
+            <a href="../templates/adsEspacosReservados.html" class="btn-relatorios">Espaços reservados</a>
+        </div>
+        
+        <section class="create-ad-section">
+            <div class="ad-grid">
+                <!-- Primeira Coluna: Upload de Imagens -->
+                <div class="ad-image-upload">
+                    <div class="upload-area">
+                        <p>Upload de Imagens</p>
+                        <button>Upload</button>
+                        <div class="image-preview">
+                            <!-- Aqui aparecerão as imagens carregadas -->
+                        </div>
+                        <div class="arrow-container">
+                            <button class="prev-arrow">◀️</button>
+                            <button class="next-arrow">▶️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segunda Coluna: Campos de Entrada -->
+                <div class="ad-details-inputs">
+                    <label for="endereco" class="input-group">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" class="rounded-input">
+
+                    <label for="nome" class="input-group">Nome:</label>
+                    <input type="text" id="nome" name="nome" class="rounded-input">
+
+                    <label for="descricao" class="input-group">Descrição:</label>
+                    <input type="text" id="descricao" name="descricao" class="rounded-input">
+
+                    <label for="tipo" class="input-group">Tipo:</label>
+                    <input type="text" id="tipo" name="tipo" class="rounded-input">
+
+                    <label for="contato" class="input-group">Contato:</label>
+                    <input type="text" id="contato" name="contato" class="rounded-input">
+
+                    <label for="valor" class="input-group">Valor:</label>
+                    <input type="number" id="valor" name="valor" class="rounded-input">
+
+                    <label for="dias-disponiveis" class="input-group">Dias Disponíveis:</label>
+                    <input type="text" id="dias-disponiveis" name="dias-disponiveis" class="rounded-input">
+                </div>
+
+                <!-- Terceira Coluna: Serviços Oferecidos -->
+                <div class="ad-services-checklist">
+                    <h3>Serviços Oferecidos</h3>
+                    <form>
+                        <label><input type="checkbox" name="banheiro"> Banheiro</label><br>
+                        <label><input type="checkbox" name="barbecue"> Barbecue</label><br>
+                        <label><input type="checkbox" name="abastecimentoCombustivel"> Abastecimento de Combustível</label><br>
+                        <label><input type="checkbox" name="lojaConveniencia"> Loja de Conveniência</label><br>
+                        <label><input type="checkbox" name="petFriendly"> Pet Friendly</label><br>
+                        <label><input type="checkbox" name="piscina"> Piscina</label><br>
+                        <label><input type="checkbox" name="abastecimentoCarrosEletricos"> Abastecimento para Carros Elétricos</label><br>
+                        <label><input type="checkbox" name="lavagem"> Lavagem</label><br>
+                        <label><input type="checkbox" name="calibracaoPneus"> Calibração de Pneus</label><br>
+                        <label><input type="checkbox" name="restauranteProximo"> Restaurante Próximo</label><br>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2024 Camping System. Todos os direitos reservados | Kamily Santos.</p>
+    </footer>
 
 </body>
+
 </html>

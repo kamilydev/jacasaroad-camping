@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anúncio - JaCasa Road</title>
+    <link rel="stylesheet" href="../css/style-ads.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/jacasa-road-logo.jpg" alt="JaCasa Road Logo">
+            <h1>JaCasa Road</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="../templates/homeLogin.html">Home</a></li>
+                <li><a href="explorerVisualizarTodosAnuncios.html">Explorar</a></li>
+                <li><a href="../templates/feedConstrucao.html">Feed</a></li>
+                <li><a href="../templates/adsMeusAnunciosAnfitriao.html">Anúncios</a></li>
+                <li><a href="../templates/configDadosPessoais.html">Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="profile-icon">
+            <img src="../images/default-image-perfil.jpg" alt="Perfil">
+        </div>
+    </header>
+    
+    <main>
+        <div class="back-button">
+            <a href="explorerVisualizarTodosAnuncios.html" class="btn-back">← Voltar para os anúncios</a>
+        </div>
+
+        <section class="ad-header">
+            <h2>Silver Retreat</h2>
+            <div class="ad-image">
+                <img src="../images/ads-one.jpg" alt="ads-one">
+                <span class="ad-heart">❤️</span>
+            </div>
+            <p>Endereço: Avenida das Árvores, 123 - Serra Verde, RS</p>
+        </section>
+        
+        <section class="ad-details">
+            <div class="anunciante-info">
+                <h3>Anunciante</h3>
+                <img src="../images/default-image-perfil.jpg" alt="Foto do Anunciante" class="anunciante-foto">
+                <p><strong>GreenEscape</strong></p><br>
+            </div>
+            <div class="details-grid">
+                <div>
+                    <p><strong>Descrição:</strong> Desfrute de uma estadia inesquecível no Silver Retreat, uma charmosa e aconchegante caravana situada no coração da Serra Verde, RS.</p>
+                    <p><strong>Avaliação:</strong> 4.5 ⭐</p>
+                    <p><strong>Contato:</strong> (99) 99999-9999</p>
+                </div>
+                <div>
+                    <p><strong>N pessoas:</strong> 4</p>
+                    <p><strong>Banheiro:</strong> Compartilhado</p>
+                    <p><strong>Armário:</strong> Não</p>
+                    <p><strong>Abastecimento Elétrico:</strong> Sim</p>
+                    <p><strong>Eletricidade:</strong> Sim</p>
+                    <p><strong>Abastecimento Hídrico:</strong> Sim</p>
+                    <p><strong>Ponto de Descarte de Saneamento:</strong> Não</p>
+                    <p><strong>Lavagem:</strong> Sim</p>
+                    <p><strong>Calibração de Pneus:</strong> Não</p>
+                    <p><strong>Loja de Conveniência:</strong> Sim</p>
+                    <p><strong>Piscina:</strong> Não</p>
+                    <p><strong>Pet friendly:</strong> Sim</p>
+                    <p><strong>Restaurante Próximo:</strong> Sim</p>
+                    <p><strong>Abastecimento de Combustível Próximo:</strong> Sim</p>
+                    <p><strong>Abastecimento de Carros Elétricos:</strong> Não</p>
+                </div>
+            </div>
+            <div class="infos-ads">
+                <p><strong>Período de hospedagem:</strong> 15/09/2024 - 22/09/2024</p>
+                <p><strong>Valor/dia:</strong> R$ 250,00</p>
+                <button class="reserve-button" onclick="openModal()">Reservar</button>
+            </div>
+        </section>
+
+        <section class="ad-reviews">
+            <h3>Avaliações (20 comentários) | 4.5 ⭐⭐⭐⭐</h3>
+            <div class="review">
+                <img src="../images/default-image-perfil.jpg" alt="Foto do comentario" class="comentario-foto">
+                <p><strong>Larissa Souza:</strong> Excelente lugar! ⭐⭐⭐⭐</p>
+            </div>
+            <div class="review">
+                <img src="../images/default-image-perfil.jpg" alt="Foto do comentario" class="comentario-foto">
+                <p><strong>Vitor Sales:</strong> Lugar aconchegante! ⭐⭐⭐⭐⭐</p>
+            </div>
+            <div class="review">
+                <img src="../images/default-image-perfil.jpg" alt="Foto do comentario" class="comentario-foto">
+                <p><strong>Caio Nogueira:</strong> Boa localização, mas poderia ser mais limpo. ⭐⭐⭐</p>
+            </div>
+        </section>
+    </main>
+
+     <!-- Modal -->
+     <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close close-button" onclick="closeModal()">&times;</span>
+            <h2>Faça sua Reserva</h2>
+            <form id="reservationForm">
+                <label for="checkin">Data de Chegada:</label>
+                <input type="date" id="checkin" name="checkin" required><br><br>
+
+                <label for="checkout">Data de Saída:</label>
+                <input type="date" id="checkout" name="checkout" required><br><br>
+
+                <p id="totalPrice"></p>
+                
+                <button type="button" class="reserve-button-modal" onclick="calculateReservation()">Calcular Reserva</button><br><br>
+
+                <button type="button" class="reserve-button-modal" onclick="finalizeReservation()">Confirmar Reserva</button>
+                
+                <!-- Mensagem de sucesso -->
+                <p id="successMessage" style="color: green; display: none;">Reserva realizada com sucesso!</p>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2024 Camping System. Todos os direitos reservados | Kamily Santos.</p>
+    </footer>
+
+    <script>
+        // Função para abrir o modal
+        function openModal() {
+            document.getElementById("reservationModal").style.display = "block";
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            document.getElementById("reservationModal").style.display = "none";
+        }
+
+        // Função para calcular a reserva
+        function calculateReservation() {
+            const checkinDate = new Date(document.getElementById("checkin").value);
+            const checkoutDate = new Date(document.getElementById("checkout").value);
+            const dailyRate = 250;
+
+            if (checkoutDate <= checkinDate) {
+                alert("A data de saída não pode ser anterior ou igual à data de chegada.");
+                return;
+            }
+
+            // Calcular a diferença em dias
+            const differenceInTime = checkoutDate.getTime() - checkinDate.getTime();
+            const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+
+            // Calcular o preço total
+            const totalPrice = differenceInDays * dailyRate;
+
+            // Mostrar o resultado
+            document.getElementById("totalPrice").textContent = "Número de dias: " + differenceInDays + " | Total: R$ " + totalPrice.toFixed(2);
+        }
+
+        // Função para finalizar a reserva
+        function finalizeReservation() {
+            const successMessage = document.getElementById("successMessage");
+            successMessage.style.display = "block"; // Exibir mensagem de sucesso
+            
+            // Esconder mensagem e fechar o modal após 4 segundos
+            setTimeout(() => {
+                successMessage.style.display = "none";
+                closeModal();
+            }, 4000);
+        }
+    </script>
+</body>
+
+</html>
