@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - JaCasa Road</title>
+    <!-- Usando Thymeleaf para resolver o caminho do CSS -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style-login.css}">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <!-- Usando Thymeleaf para resolver o caminho da imagem -->
+        <img th:src="@{/images/jacasa-road-logo.jpg}" alt="JaCasa Road Logo">
+        <h1>JaCasa Road</h1>
+    </div>
+</header>
+
+<main class="login-container">
+    <div class="left-panel">
+        <!-- Usando Thymeleaf para resolver o caminho do link -->
+        <a th:href="@{/homeLogout}" class="back-button">&#x25C0;</a>
+    </div>
+    <div class="right-panel">
+        <div class="login-box">
+            <h2>Bem-vindo(a) de volta!</h2>
+            <!-- Usando Thymeleaf para configurar a ação do formulário -->
+            <form th:action="@{/login}" method="POST" id="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="login-button">Logar</button>
+                <!-- Links de navegação usando Thymeleaf -->
+                <a th:href="@{/userCadastroUsuario}" class="forgot-password">Novo usuário</a>
+                <a th:href="" class="forgot-password">Esqueceu a senha?</a>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>© 2024 Camping System. Todos os direitos reservados | Kamily Santos.</p>
+</footer>
+
+<script>
+    function handleLogin(event) {
+        event.preventDefault();  // Previne o comportamento padrão de envio do formulário
+        window.location.href = /*[[${'/homeLogin'}]]*/ "/homeLogin";  // Redireciona para a página desejada usando Thymeleaf
+    }
+</script>
+</body>
+</html>
